@@ -12,6 +12,12 @@ conn.execute(
     )
     """
 )
+conn.execute(
+    """
+    INSERT INTO clientes (nombre, email, telefono) 
+    VALUES ("maria jimenez", "maria.jimenez@email.com", 453975641)
+    """
+)
 
 conn.execute(
     """
@@ -20,6 +26,12 @@ conn.execute(
         nombre TEXT NOT NULL,
         precio FLOAT NOT NULL
     )
+    """
+)
+conn.execute(
+    """
+    INSERT INTO productos (nombre, precio) 
+    VALUES ("pan", 0.70)
     """
 )
 
@@ -31,6 +43,12 @@ conn.execute(
         fecha DATE NOT NULL,
         FOREIGN KEY (id_cliente) REFERENCES clientes (id_cliente)
     )
+    """
+)
+conn.execute(
+    """
+    INSERT INTO pedidos (id_cliente, fecha) 
+    VALUES (3, "2025-10-23")
     """
 )
 
@@ -46,4 +64,11 @@ conn.execute(
     )
     """
 )
+conn.execute(
+    """
+    INSERT INTO detalle_pedidos (id_pedido, id_producto, cantidad) 
+    VALUES (3, 3, 70)
+    """
+)
 
+conn.commit()
