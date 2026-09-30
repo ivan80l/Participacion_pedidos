@@ -76,3 +76,18 @@ print("\nClientes:")
 cursor = conn.execute("SELECT * FROM clientes")
 for row  in cursor:
     print(row)
+
+print("\nProductos:")
+cursor = conn.execute("SELECT * FROM productos")
+for fila in cursor:
+    print(fila)
+
+print("\nPedidos:")
+cursor = conn.execute("SELECT * FROM pedidos")
+for fila in cursor:
+    print(fila)
+
+print("\nDetalle de pedidos:")
+cursor = conn.execute("SELECT * FROM detalle_pedidos")
+for fila in cursor:
+    print(fila)
